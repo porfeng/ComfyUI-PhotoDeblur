@@ -1,0 +1,415 @@
+{
+  "id": "3471464c-ca61-43c9-bca0-0d36431f29c9",
+  "revision": 0,
+  "last_node_id": 13,
+  "last_link_id": 13,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "PhotoDeblurMISCLoader",
+      "pos": [
+        -350.4239674886282,
+        305.9603381431923
+      ],
+      "size": [
+        362.071875,
+        58
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "download_ready",
+          "shape": 7,
+          "type": "PHOTO_DEBLUR_READY",
+          "link": 4
+        }
+      ],
+      "outputs": [
+        {
+          "name": "deblur_model",
+          "type": "PHOTO_DEBLUR_MODEL",
+          "links": [
+            10
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoDeblurMISCLoader"
+      },
+      "widgets_values": [
+        "RealBlur_R"
+      ],
+      "widgets_values_named": {
+        "variant": "RealBlur_R"
+      }
+    },
+    {
+      "id": 3,
+      "type": "PhotoDeblurTiled",
+      "pos": [
+        139.82733405718398,
+        210.06605165939075
+      ],
+      "size": [
+        333.0259765625,
+        174
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 11
+        },
+        {
+          "name": "deblur_model",
+          "type": "PHOTO_DEBLUR_MODEL",
+          "link": 10
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            13
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoDeblurTiled"
+      },
+      "widgets_values": [
+        768,
+        96,
+        "comfy_linear",
+        false,
+        0
+      ],
+      "widgets_values_named": {
+        "tile_size": 768,
+        "overlap": 96,
+        "blend": "comfy_linear",
+        "tta": false,
+        "seed": 0
+      }
+    },
+    {
+      "id": 4,
+      "type": "LoadImage",
+      "pos": [
+        -687.3758979770537,
+        -111.84583664893022
+      ],
+      "size": [
+        270,
+        314
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            9
+          ]
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "example.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "car.png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 6,
+      "type": "PhotoDeblurDownloader",
+      "pos": [
+        -758.9544986086244,
+        268.3740641669414
+      ],
+      "size": [
+        364.5123046875,
+        146
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "ready",
+          "type": "PHOTO_DEBLUR_READY",
+          "links": [
+            4
+          ]
+        },
+        {
+          "name": "model_dir",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoDeblurDownloader"
+      },
+      "widgets_values": [
+        "MISCFilter",
+        "RealBlur_R",
+        false
+      ],
+      "widgets_values_named": {
+        "model": "MISCFilter",
+        "variant": "GoPro",
+        "repair_invalid": false
+      }
+    },
+    {
+      "id": 7,
+      "type": "PhotoDeblurHILoader",
+      "pos": [
+        -320.969431762951,
+        434.89683829374997
+      ],
+      "size": [
+        337.24375,
+        82
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 4,
+      "inputs": [
+        {
+          "name": "download_ready",
+          "shape": 7,
+          "type": "PHOTO_DEBLUR_READY",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "deblur_model",
+          "type": "PHOTO_DEBLUR_MODEL",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoDeblurHILoader"
+      },
+      "widgets_values": [
+        "RealBlur_R",
+        0
+      ],
+      "widgets_values_named": {
+        "variant": "RealBlur_R",
+        "steps": 0
+      }
+    },
+    {
+      "id": 9,
+      "type": "PreviewImage",
+      "pos": [
+        -329.3073885452521,
+        -102.42656607211846
+      ],
+      "size": [
+        210,
+        270.2959972473259
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": [
+            11
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 10,
+      "type": "MarkdownNote",
+      "pos": [
+        -1951.5986027043214,
+        -132.71632184821505
+      ],
+      "size": [
+        606.2413848078874,
+        730.4129947759837
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "# PhotoDeblur 使用说明\n\n使用 **HI-Diff** 或 **MISCFilter** 对单张照片去模糊，支持原尺寸分块处理。\n\n## 连接方式\n\n1. **加载图像**的 IMAGE → `Deblur Image (Tiled)` 的 `image`。\n2. **HI-Diff Model Loader** 或 **MISCFilter Model Loader** → 分块节点的 `deblur_model`。\n3. 分块节点输出 → **预览图像 / 保存图像**。\n\n两个模型需要分别从原图处理，方便对比。\n\n需要下载权重时：\n**Download Deblur Models.ready → 对应加载器.download_ready**\n\n**下载器与加载器的 model、variant 必须一致。** 权重已在本地时，可以不连接下载节点。\n\n## 推荐起始参数\n\n- 权重：`RealBlur_J`\n- 分块：`tile_size = 768`\n- 重叠：`overlap = 96`\n- 融合：`blend = comfy_linear`\n- TTA：`false`\n- 随机种子：`seed = 100`\n- HI-Diff 步数：`steps = 0`\n\n显存不足时，先尝试 **512 分块 / 64 重叠**。\n\n## 参数含义\n\n- **tile_size**：每块边长，单位像素。更大通常更占显存，不保证画质更好。\n- **overlap**：相邻块的重叠宽度，必须小于分块尺寸。增加重叠会增加计算量。\n- **blend**：重叠区域的融合方式。默认 `comfy_linear` 使用 ComfyUI 核心线性羽化；余弦、高斯、平均融合可作对照，不代表更高质量。\n- **tta**：对8种翻转、旋转分别推理再平均，约8倍模型计算量。可能更稳定，也可能让细节变柔。\n- **seed**：控制 HI-Diff 的随机先验，固定便于比较；MISC 本身没有扩散采样随机性。\n- **steps**：仅 HI-Diff 使用。0表示官方默认，J、R为16步，GoPro为8步。增加步数不保证提升效果。\n- **MISC 没有 steps**：一次网络前向计算即可完成恢复。开启 TTA 是多次推理，不是多步扩散。\n\n## 权重选择\n\n两个模型都提供：\n\n- **RealBlur_J**：建议作为初次测试的起点。\n- **RealBlur_R**：另一套 RealBlur 训练权重，可与 J 对照。\n- **GoPro**：GoPro 训练版本，可作为补充对照。\n\n这些版本不是画质等级，没有一个保证适合所有照片。**R 不代表直接输入相机 RAW，也不是16位输入开关。**\n\nHI-Diff 与 MISC 是不同模型，权重不能互换。\n\n## 下载与修复\n\n权重统一放在 ComfyUI 的 `models` 目录：\n\n- HI-Diff：`HI-Diff/HI_Diff_版本/`，需要同版本的 `net_g.pth`、`net_le_dm.pth`、`net_d.pth`。\n- MISC：`MISCFilter/版本.pth`。\n\n下载节点使用作者公开的 Google Drive 来源并校验 SHA256。已有完整文件会跳过，压缩包缓存位于 `models/.photo_deblur_downloads`。\n\n**repair_invalid 默认保持 false。**\n- false：已有文件校验不符时，保留并提示。\n- true：先把不匹配的文件改名备份，再安装官方文件。\n\n缺少文件时，false 状态下也会正常下载。\n\n## 依赖说明\n\n所有依赖必须安装到 **ComfyUI 实际使用的 Python 环境**：\n\n- 基础 / HI-Diff：`requirements.txt`\n- MISC，CUDA 12：另外安装 `requirements-misc-cu12.txt`，提供 CuPy。\n- 在线下载：另外安装 `requirements-download.txt`，提供 gdown。\n- 可选色调修正，且缺少 cv2：安装 `requirements-tone.txt`。\n\n**下载依赖 gdown 不包含 MISC 的运行依赖 CuPy。**\n\n## TIFF 与输出\n\n可以输入当前读图节点支持的 JPG、PNG、TIFF。TIFF 输入节点缩略图可能空白，可接 **预览图像**检查后台是否已读入。\n\n恢复和拼接使用浮点数据；输入是否保留16位精度，取决于读图节点。\n\n**普通 Save Image 输出8位 PNG。** 需要16位 TIFF 输出时，应连接支持16位保存的节点。\n\n## 可选色调修正\n\n`Match Input Tone (Optional)` 同时连接原图与恢复图，可先试 `sigma = 16`，0表示关闭。\n\n它用于约束大范围色调，可能减轻块状色差，属于额外后处理。建议同时保留未经色调修正的模型输出作比较。"
+      ],
+      "widgets_values_named": {
+        "text": "# PhotoDeblur 使用说明\n\n使用 **HI-Diff** 或 **MISCFilter** 对单张照片去模糊，支持原尺寸分块处理。\n\n## 连接方式\n\n1. **加载图像**的 IMAGE → `Deblur Image (Tiled)` 的 `image`。\n2. **HI-Diff Model Loader** 或 **MISCFilter Model Loader** → 分块节点的 `deblur_model`。\n3. 分块节点输出 → **预览图像 / 保存图像**。\n\n两个模型需要分别从原图处理，方便对比。\n\n需要下载权重时：\n**Download Deblur Models.ready → 对应加载器.download_ready**\n\n**下载器与加载器的 model、variant 必须一致。** 权重已在本地时，可以不连接下载节点。\n\n## 推荐起始参数\n\n- 权重：`RealBlur_J`\n- 分块：`tile_size = 768`\n- 重叠：`overlap = 96`\n- 融合：`blend = comfy_linear`\n- TTA：`false`\n- 随机种子：`seed = 100`\n- HI-Diff 步数：`steps = 0`\n\n显存不足时，先尝试 **512 分块 / 64 重叠**。\n\n## 参数含义\n\n- **tile_size**：每块边长，单位像素。更大通常更占显存，不保证画质更好。\n- **overlap**：相邻块的重叠宽度，必须小于分块尺寸。增加重叠会增加计算量。\n- **blend**：重叠区域的融合方式。默认 `comfy_linear` 使用 ComfyUI 核心线性羽化；余弦、高斯、平均融合可作对照，不代表更高质量。\n- **tta**：对8种翻转、旋转分别推理再平均，约8倍模型计算量。可能更稳定，也可能让细节变柔。\n- **seed**：控制 HI-Diff 的随机先验，固定便于比较；MISC 本身没有扩散采样随机性。\n- **steps**：仅 HI-Diff 使用。0表示官方默认，J、R为16步，GoPro为8步。增加步数不保证提升效果。\n- **MISC 没有 steps**：一次网络前向计算即可完成恢复。开启 TTA 是多次推理，不是多步扩散。\n\n## 权重选择\n\n两个模型都提供：\n\n- **RealBlur_J**：建议作为初次测试的起点。\n- **RealBlur_R**：另一套 RealBlur 训练权重，可与 J 对照。\n- **GoPro**：GoPro 训练版本，可作为补充对照。\n\n这些版本不是画质等级，没有一个保证适合所有照片。**R 不代表直接输入相机 RAW，也不是16位输入开关。**\n\nHI-Diff 与 MISC 是不同模型，权重不能互换。\n\n## 下载与修复\n\n权重统一放在 ComfyUI 的 `models` 目录：\n\n- HI-Diff：`HI-Diff/HI_Diff_版本/`，需要同版本的 `net_g.pth`、`net_le_dm.pth`、`net_d.pth`。\n- MISC：`MISCFilter/版本.pth`。\n\n下载节点使用作者公开的 Google Drive 来源并校验 SHA256。已有完整文件会跳过，压缩包缓存位于 `models/.photo_deblur_downloads`。\n\n**repair_invalid 默认保持 false。**\n- false：已有文件校验不符时，保留并提示。\n- true：先把不匹配的文件改名备份，再安装官方文件。\n\n缺少文件时，false 状态下也会正常下载。\n\n## 依赖说明\n\n所有依赖必须安装到 **ComfyUI 实际使用的 Python 环境**：\n\n- 基础 / HI-Diff：`requirements.txt`\n- MISC，CUDA 12：另外安装 `requirements-misc-cu12.txt`，提供 CuPy。\n- 在线下载：另外安装 `requirements-download.txt`，提供 gdown。\n- 可选色调修正，且缺少 cv2：安装 `requirements-tone.txt`。\n\n**下载依赖 gdown 不包含 MISC 的运行依赖 CuPy。**\n\n## TIFF 与输出\n\n可以输入当前读图节点支持的 JPG、PNG、TIFF。TIFF 输入节点缩略图可能空白，可接 **预览图像**检查后台是否已读入。\n\n恢复和拼接使用浮点数据；输入是否保留16位精度，取决于读图节点。\n\n**普通 Save Image 输出8位 PNG。** 需要16位 TIFF 输出时，应连接支持16位保存的节点。\n\n## 可选色调修正\n\n`Match Input Tone (Optional)` 同时连接原图与恢复图，可先试 `sigma = 16`，0表示关闭。\n\n它用于约束大范围色调，可能减轻块状色差，属于额外后处理。建议同时保留未经色调修正的模型输出作比较。"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 12,
+      "type": "MarkdownNote",
+      "pos": [
+        -1319.638544922147,
+        -123.10685386834386
+      ],
+      "size": [
+        517.5817727553917,
+        709.0492109551087
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "# PhotoDeblur — User Guide\n\nDeblur photos with **HI-Diff** or **MISCFilter**, using tiled processing at the original resolution.\n\n## Connections\n\n1. **Load Image** IMAGE → `Deblur Image (Tiled)` → `image`.\n2. **HI-Diff Model Loader** or **MISCFilter Model Loader** → `deblur_model`.\n3. The restored image → **Preview Image / Save Image**.\n\nTo compare models, process the same original image through separate branches.\n\nTo download weights first:\n**Download Deblur Models.ready → matching loader.download_ready**\n\n**The downloader and loader must select the same model and variant.** The download connection is optional when weights are already installed locally.\n\n## Recommended Starting Settings\n\n- Variant: `RealBlur_J`\n- Tile size: `768`\n- Overlap: `96`\n- Blend: `comfy_linear`\n- TTA: `false`\n- Seed: `100`\n- HI-Diff steps: `0`\n\nIf GPU memory is insufficient, try **512 tiles / 64 overlap**.\n\n## Parameters\n\n- **tile_size**: Tile width and height in pixels. Larger tiles generally use more VRAM and do not guarantee better results.\n- **overlap**: Shared area between adjacent tiles. It must be smaller than the tile size. More overlap increases computation.\n- **blend**: How overlapping predictions are combined. The default, `comfy_linear`, uses ComfyUI’s built-in linear feathering. Cosine, Gaussian and average blending are alternatives for comparison, not quality levels.\n- **tta**: Runs eight flipped/rotated versions and averages their restored outputs. This requires roughly eight times the model computation. It may improve consistency or soften details.\n- **seed**: Controls HI-Diff’s random prior. Keep it fixed for comparisons. MISC itself has no diffusion-sampling randomness.\n- **steps**: HI-Diff only. `0` selects the official default: **16 for J/R, 8 for GoPro**. More steps do not guarantee better quality.\n- **MISC has no steps parameter**: Restoration uses one network forward pass. TTA repeats inference; it does not turn MISC into a multistep diffusion model.\n\n## Weight Variants\n\nBoth models provide:\n\n- **RealBlur_J**: A useful starting point for initial tests.\n- **RealBlur_R**: Another RealBlur-trained checkpoint to compare against J.\n- **GoPro**: A GoPro-trained checkpoint for additional comparisons.\n\nThese are training variants, not quality levels. No variant is best for every photo.\n\n**R does not enable native camera RAW input or a special 16-bit input mode.**\n\nHI-Diff and MISC use different architectures. Their weights are not interchangeable.\n\n## Downloads and Repair\n\nWeights belong in ComfyUI’s configured `models` directory:\n\n- HI-Diff: `HI-Diff/HI_Diff_VARIANT/`, containing matching `net_g.pth`, `net_le_dm.pth` and `net_d.pth`.\n- MISC: `MISCFilter/VARIANT.pth`.\n\nThe downloader uses the authors’ public Google Drive sources and checks SHA256 hashes. Existing verified files are skipped. Archives are cached in `models/.photo_deblur_downloads`.\n\n**Leave repair_invalid set to false for normal use.**\n\n- **false**: Keep mismatched existing files and report an error.\n- **true**: Rename mismatched files as backups before installing verified official replacements.\n\nMissing files can still be downloaded with this option set to false.\n\n## Dependencies\n\nInstall dependencies into **the Python environment actually used by ComfyUI**:\n\n- Basic functionality / HI-Diff: `requirements.txt`\n- MISC on CUDA 12: additionally install `requirements-misc-cu12.txt` for CuPy.\n- Online downloads: additionally install `requirements-download.txt` for gdown.\n- Optional tone matching, if cv2 is missing: `requirements-tone.txt`\n\n**Installing gdown does not install the CuPy dependency required by MISC.**\n\n## TIFF and Output Precision\n\nUse JPG, PNG or TIFF files supported by your image-loading node. A TIFF thumbnail may appear blank even when the backend can read it. Connect **Preview Image** to check the decoded input.\n\nRestoration and merging use floating-point data. Whether 16-bit input precision is preserved depends on the image loader.\n\n**Standard Save Image outputs 8-bit PNG.** For 16-bit output, use Save Image (Advanced) → PNG → 16-bit → sRGB.\n\n## Optional Tone Matching\n\nConnect both the original and restored images to `Match Input Tone (Optional)`. Try `sigma = 16`; `0` disables the correction.\n\nThis constrains broad color changes and may reduce tile-related color differences. It is additional post-processing. Keep the uncorrected model output for comparison."
+      ],
+      "widgets_values_named": {
+        "text": "# PhotoDeblur — User Guide\n\nDeblur photos with **HI-Diff** or **MISCFilter**, using tiled processing at the original resolution.\n\n## Connections\n\n1. **Load Image** IMAGE → `Deblur Image (Tiled)` → `image`.\n2. **HI-Diff Model Loader** or **MISCFilter Model Loader** → `deblur_model`.\n3. The restored image → **Preview Image / Save Image**.\n\nTo compare models, process the same original image through separate branches.\n\nTo download weights first:\n**Download Deblur Models.ready → matching loader.download_ready**\n\n**The downloader and loader must select the same model and variant.** The download connection is optional when weights are already installed locally.\n\n## Recommended Starting Settings\n\n- Variant: `RealBlur_J`\n- Tile size: `768`\n- Overlap: `96`\n- Blend: `comfy_linear`\n- TTA: `false`\n- Seed: `100`\n- HI-Diff steps: `0`\n\nIf GPU memory is insufficient, try **512 tiles / 64 overlap**.\n\n## Parameters\n\n- **tile_size**: Tile width and height in pixels. Larger tiles generally use more VRAM and do not guarantee better results.\n- **overlap**: Shared area between adjacent tiles. It must be smaller than the tile size. More overlap increases computation.\n- **blend**: How overlapping predictions are combined. The default, `comfy_linear`, uses ComfyUI’s built-in linear feathering. Cosine, Gaussian and average blending are alternatives for comparison, not quality levels.\n- **tta**: Runs eight flipped/rotated versions and averages their restored outputs. This requires roughly eight times the model computation. It may improve consistency or soften details.\n- **seed**: Controls HI-Diff’s random prior. Keep it fixed for comparisons. MISC itself has no diffusion-sampling randomness.\n- **steps**: HI-Diff only. `0` selects the official default: **16 for J/R, 8 for GoPro**. More steps do not guarantee better quality.\n- **MISC has no steps parameter**: Restoration uses one network forward pass. TTA repeats inference; it does not turn MISC into a multistep diffusion model.\n\n## Weight Variants\n\nBoth models provide:\n\n- **RealBlur_J**: A useful starting point for initial tests.\n- **RealBlur_R**: Another RealBlur-trained checkpoint to compare against J.\n- **GoPro**: A GoPro-trained checkpoint for additional comparisons.\n\nThese are training variants, not quality levels. No variant is best for every photo.\n\n**R does not enable native camera RAW input or a special 16-bit input mode.**\n\nHI-Diff and MISC use different architectures. Their weights are not interchangeable.\n\n## Downloads and Repair\n\nWeights belong in ComfyUI’s configured `models` directory:\n\n- HI-Diff: `HI-Diff/HI_Diff_VARIANT/`, containing matching `net_g.pth`, `net_le_dm.pth` and `net_d.pth`.\n- MISC: `MISCFilter/VARIANT.pth`.\n\nThe downloader uses the authors’ public Google Drive sources and checks SHA256 hashes. Existing verified files are skipped. Archives are cached in `models/.photo_deblur_downloads`.\n\n**Leave repair_invalid set to false for normal use.**\n\n- **false**: Keep mismatched existing files and report an error.\n- **true**: Rename mismatched files as backups before installing verified official replacements.\n\nMissing files can still be downloaded with this option set to false.\n\n## Dependencies\n\nInstall dependencies into **the Python environment actually used by ComfyUI**:\n\n- Basic functionality / HI-Diff: `requirements.txt`\n- MISC on CUDA 12: additionally install `requirements-misc-cu12.txt` for CuPy.\n- Online downloads: additionally install `requirements-download.txt` for gdown.\n- Optional tone matching, if cv2 is missing: `requirements-tone.txt`\n\n**Installing gdown does not install the CuPy dependency required by MISC.**\n\n## TIFF and Output Precision\n\nUse JPG, PNG or TIFF files supported by your image-loading node. A TIFF thumbnail may appear blank even when the backend can read it. Connect **Preview Image** to check the decoded input.\n\nRestoration and merging use floating-point data. Whether 16-bit input precision is preserved depends on the image loader.\n\n**Standard Save Image outputs 8-bit PNG.** For 16-bit TIFF output, connect a save node that explicitly supports it.\n\n## Optional Tone Matching\n\nConnect both the original and restored images to `Match Input Tone (Optional)`. Try `sigma = 16`; `0` disables the correction.\n\nThis constrains broad color changes and may reduce tile-related color differences. It is additional post-processing. Keep the uncorrected model output for comparison."
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 13,
+      "type": "SaveImageAdvanced",
+      "pos": [
+        622.9218208608902,
+        194.51645975911507
+      ],
+      "size": [
+        403.06737699294194,
+        388.3326329674211
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 13
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI",
+        "png",
+        "8-bit",
+        "sRGB"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "ComfyUI",
+        "format": "png",
+        "format.bit_depth": "8-bit",
+        "format.input_color_space": "sRGB"
+      }
+    }
+  ],
+  "links": [
+    [
+      4,
+      6,
+      0,
+      1,
+      0,
+      "PHOTO_DEBLUR_READY"
+    ],
+    [
+      9,
+      4,
+      0,
+      9,
+      0,
+      "IMAGE"
+    ],
+    [
+      10,
+      1,
+      0,
+      3,
+      1,
+      "PHOTO_DEBLUR_MODEL"
+    ],
+    [
+      11,
+      9,
+      0,
+      3,
+      0,
+      "IMAGE"
+    ],
+    [
+      13,
+      3,
+      0,
+      13,
+      0,
+      "IMAGE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.4864362802414364,
+      "offset": [
+        662.6949342302086,
+        -53.87916769759241
+      ]
+    },
+    "frontendVersion": "1.55.18"
+  },
+  "version": 0.4
+}

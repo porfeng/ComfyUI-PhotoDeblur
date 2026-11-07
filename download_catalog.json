@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "verified_on": "2026-11-06",
+  "archives": {
+    "hi_j": {
+      "name": "HI_Diff_RealBlur_J.zip",
+      "drive_id": "1zdAOurzjAONRmLuPmSi0nppyqT2ORIRg",
+      "url": "https://drive.google.com/file/d/1zdAOurzjAONRmLuPmSi0nppyqT2ORIRg/view",
+      "source_page": "https://github.com/zhengchen1999/HI-Diff#models",
+      "bytes": 89856395,
+      "sha256": "4448ef4a90acd0b5b0e2e48d8b2509b436d8f0b2beef2fd3cd3e23a797f01667"
+    },
+    "hi_gopro": {
+      "name": "HI_Diff_GoPro.zip",
+      "drive_id": "1cx0vCV5Z5fklnbqonZQad37vt4armEbT",
+      "url": "https://drive.google.com/file/d/1cx0vCV5Z5fklnbqonZQad37vt4armEbT/view",
+      "source_page": "https://github.com/zhengchen1999/HI-Diff#models",
+      "bytes": 105848285,
+      "sha256": "3a0264a7c893d98fb5a0d2c6bb74f59ed32b9658f775a651f96ca7e5215b95ad"
+    },
+    "misc": {
+      "name": "checkpoints.zip",
+      "drive_id": "1XsySc2rDCzoqZ0-Ph1dFYQ49_APb5Eay",
+      "url": "https://drive.google.com/file/d/1XsySc2rDCzoqZ0-Ph1dFYQ49_APb5Eay/view",
+      "source_page": "https://github.com/ChengxuLiu/MISCFilter#models",
+      "bytes": 178752276,
+      "sha256": "4972e758f2fbc0e9ea5007b1fb3170e5872efd4622c371526cca26ae967583ff"
+    },
+    "hi_r": {
+      "name": "HI_Diff_RealBlur_R.zip",
+      "drive_id": "1inQwZ6SJIHYyZoQo702Mv4upjvgg3kFA",
+      "url": "https://drive.google.com/file/d/1inQwZ6SJIHYyZoQo702Mv4upjvgg3kFA/view",
+      "source_page": "https://github.com/zhengchen1999/HI-Diff#models",
+      "bytes": 89822984,
+      "sha256": "6ccfe1e1480064ef373efbd1373c746b14161b492e87193be01efbb32cc395fc"
+    }
+  },
+  "models": {
+    "HI-Diff": {
+      "RealBlur_J": {
+        "archive": "hi_j",
+        "directory": "HI-Diff/HI_Diff_RealBlur_J",
+        "files": [
+          {
+            "name": "net_g.pth",
+            "bytes": 89298313,
+            "sha256": "7b5aba445c96d78348a7a0e3431af8a0238c0308ab030e86a386c255474b37f9"
+          },
+          {
+            "name": "net_le_dm.pth",
+            "bytes": 6036583,
+            "sha256": "d8571db2e4589cc1c21ba08e4d8dc0514c74a7a0a2cd2d37218b49981e34f876"
+          },
+          {
+            "name": "net_d.pth",
+            "bytes": 1581639,
+            "sha256": "621fed9f665a709c72be62df2260da8b3a3caa18f4bb1101902e8b0cee9114da"
+          }
+        ]
+      },
+      "GoPro": {
+        "archive": "hi_gopro",
+        "directory": "HI-Diff/HI_Diff_GoPro",
+        "files": [
+          {
+            "name": "net_g.pth",
+            "bytes": 101397513,
+            "sha256": "c56f9d08f7517c1bb6400565563849ce0dfc4408e13de21e11c42f1cbd9f794a"
+          },
+          {
+            "name": "net_le_dm.pth",
+            "bytes": 2245287,
+            "sha256": "b710f3ce5e94e88c28a3598009c46ac4f56c9cf181d59713a3399cc6df841cd4"
+          },
+          {
+            "name": "net_d.pth",
+            "bytes": 10529038,
+            "sha256": "69dc83c02fb8dd6ea62b53903a95079c518920fe3c7b4e6790f0d5a6def0f0b0"
+          }
+        ]
+      },
+      "RealBlur_R": {
+        "archive": "hi_r",
+        "directory": "HI-Diff/HI_Diff_RealBlur_R",
+        "files": [
+          {
+            "name": "net_g.pth",
+            "bytes": 89298313,
+            "sha256": "0784d3d6f5c5ee0a0b374b06f3f273cf723580da142698316ccd6fc03ed67a83"
+          },
+          {
+            "name": "net_le_dm.pth",
+            "bytes": 6036583,
+            "sha256": "60b9e2fc2295fc589cae9673a02949b9d395e8f235ddbed6dfccfd2d510b0537"
+          },
+          {
+            "name": "net_d.pth",
+            "bytes": 1581639,
+            "sha256": "0cc56f6196fb9dd7687c73f43110b6a4fe98c04c3fd75493ddd19a9c237c1e76"
+          }
+        ]
+      }
+    },
+    "MISCFilter": {
+      "RealBlur_J": {
+        "archive": "misc",
+        "directory": "MISCFilter",
+        "files": [
+          {
+            "name": "RealBlur_J.pth",
+            "bytes": 68870256,
+            "sha256": "6a17b8d26dfe467755c63d7b2aab7f3d0dc2b8125edc30d8c12a475f71256a51"
+          }
+        ]
+      },
+      "GoPro": {
+        "archive": "misc",
+        "directory": "MISCFilter",
+        "files": [
+          {
+            "name": "GoPro.pth",
+            "bytes": 68870254,
+            "sha256": "a2b7a98547ce1f6a310fd2e0bff8f4a6f58b9ab019d848d90e164de06681f97e"
+          }
+        ]
+      },
+      "RealBlur_R": {
+        "archive": "misc",
+        "directory": "MISCFilter",
+        "files": [
+          {
+            "name": "RealBlur_R.pth",
+            "bytes": 68870256,
+            "sha256": "855051fd59bc4441c785d67079709ff55bf6184ea45c59f6e3089e5bd42d3769"
+          }
+        ]
+      }
+    }
+  }
+}

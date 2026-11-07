@@ -1,0 +1,2 @@
+# PyTorch, numpy, Pillow and safetensors are provided by ComfyUI.
+einops>=0.6.1

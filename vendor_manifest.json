@@ -1,0 +1,133 @@
+{
+  "HI-Diff": {
+    "url": "https://github.com/zhengchen1999/HI-Diff",
+    "commit": "b3bfd167997e27f8edd57681cf70e5031a0e35f2"
+  },
+  "MISCFilter": {
+    "url": "https://github.com/ChengxuLiu/MISCFilter",
+    "commit": "aca59a8884cdf91f894dd0e7ca9f2527e4c9fd74"
+  },
+  "files": [
+    {
+      "source": "HI-Diff\\remove_blur\\HI-Diff\\hi_diff\\archs\\Transformer_arch.py",
+      "target": "vendor/hi/Transformer_arch.py",
+      "source_sha256": "3207f43702dff484741666d394c0a05049dbad531d6f53d16b89346d95652de2",
+      "changes": [
+        "from basicsr.utils.registry import ARCH_REGISTRY\n",
+        "@ARCH_REGISTRY.register()\n"
+      ]
+    },
+    {
+      "source": "HI-Diff\\remove_blur\\HI-Diff\\hi_diff\\archs\\latent_encoder_arch.py",
+      "target": "vendor/hi/latent_encoder_arch.py",
+      "source_sha256": "695a32ff3ddf2ed7cddb24382d85f1b45f6eb1e96598d9f245d88348b1cc5d74",
+      "changes": [
+        "from basicsr.utils.registry import ARCH_REGISTRY\n",
+        "@ARCH_REGISTRY.register()\n"
+      ]
+    },
+    {
+      "source": "HI-Diff\\remove_blur\\HI-Diff\\hi_diff\\archs\\denoising_arch.py",
+      "target": "vendor/hi/denoising_arch.py",
+      "source_sha256": "213745a3db1604939ff0a0c09f36fbd1d1a3dc4a37518bc630d5ae9a3a0dba65",
+      "changes": [
+        "from basicsr.utils.registry import ARCH_REGISTRY\n",
+        "@ARCH_REGISTRY.register()\n"
+      ]
+    },
+    {
+      "source": "HI-Diff\\remove_blur\\HI-Diff\\hi_diff\\archs\\denoising_simple_arch.py",
+      "target": "vendor/hi/denoising_simple_arch.py",
+      "source_sha256": "498b001f939e62c0e07aad9538eeba02b7f49e004a476bae420e9028201932e3",
+      "changes": [
+        "from basicsr.utils.registry import ARCH_REGISTRY\n",
+        "@ARCH_REGISTRY.register()\n"
+      ]
+    },
+    {
+      "source": "HI-Diff\\remove_blur\\HI-Diff\\ldm\\ddpm.py",
+      "target": "vendor/hi/ddpm.py",
+      "source_sha256": "b18acd7d9a16f2500ec1fdc69871c6d9a4710f3aae511c3734636a9ed5301f7b",
+      "changes": [
+        "from ldm.util import ",
+        "from ldm.util2 import "
+      ]
+    },
+    {
+      "source": "HI-Diff\\remove_blur\\HI-Diff\\ldm\\util.py",
+      "target": "vendor/hi/util.py",
+      "source_sha256": "1aa7764d8a5735c2591f4c2d18645bd3a4165bbd5d3e52dee05c8eb01d128398",
+      "changes": [
+        "from ldm.util import ",
+        "from ldm.util2 import "
+      ]
+    },
+    {
+      "source": "HI-Diff\\remove_blur\\HI-Diff\\ldm\\util2.py",
+      "target": "vendor/hi/util2.py",
+      "source_sha256": "53e5aefa5869ec710fc6c904606543081ab26c0e51a1c5a1b6b5869d1193f8f4",
+      "changes": [
+        "from ldm.util import ",
+        "from ldm.util2 import "
+      ]
+    },
+    {
+      "source": "HI-Diff\\remove_blur\\HI-Diff\\hi_diff\\utils\\beta_schedule.py",
+      "target": "vendor/hi/beta_schedule.py",
+      "source_sha256": "343403b4ed4bb43247d93bfc25e13dc4ee4c4781a40ddb48d773b0bdef660bec",
+      "changes": []
+    },
+    {
+      "source": "HI-Diff\\remove_blur\\HI-Diff\\hi_diff\\models\\HI_Diff_S2_model.py",
+      "target": "vendor/hi/gopro_prior.py",
+      "extracted_methods": [
+        "set_new_noise_schedule",
+        "predict_start_from_noise",
+        "q_posterior",
+        "p_mean_variance",
+        "p_sample",
+        "p_sample_loop"
+      ]
+    },
+    {
+      "source": "MISC Filter\\MISCFilter\\models\\MISCFilterNet.py",
+      "target": "vendor/misc/MISCFilterNet.py",
+      "source_sha256": "e3275c1585c75f6e163b5e54e0ae94084e565e04c0f95e213f743fc341a55c5d",
+      "changes": [
+        "from models.layers import ",
+        "from models.doconv_pytorch import ",
+        "import models.MISCKernel_cuda as misckernel"
+      ]
+    },
+    {
+      "source": "MISC Filter\\MISCFilter\\models\\layers.py",
+      "target": "vendor/misc/layers.py",
+      "source_sha256": "08ec6d9720a8a523b4d59be5fd6a1bf79a8ab14ef6837ebc17d8bf7e017b510e",
+      "changes": [
+        "from models.layers import ",
+        "from models.doconv_pytorch import ",
+        "import models.MISCKernel_cuda as misckernel"
+      ]
+    },
+    {
+      "source": "MISC Filter\\MISCFilter\\models\\doconv_pytorch.py",
+      "target": "vendor/misc/doconv_pytorch.py",
+      "source_sha256": "8c6dfefc679d21e6e6c58ca3c56ed5d1e28c9eff6053a25b2f577ff525b59a4f",
+      "changes": [
+        "from models.layers import ",
+        "from models.doconv_pytorch import ",
+        "import models.MISCKernel_cuda as misckernel"
+      ]
+    },
+    {
+      "source": "MISC Filter\\MISCFilter\\models\\MISCKernel_cuda.py",
+      "target": "vendor/misc/MISCKernel_cuda.py",
+      "source_sha256": "c73ec1ec65828ebd75fcc9bbad9c1599893eb80f5251ed22ed9bd83a40c09575",
+      "changes": [
+        "from models.layers import ",
+        "from models.doconv_pytorch import ",
+        "import models.MISCKernel_cuda as misckernel"
+      ]
+    }
+  ]
+}

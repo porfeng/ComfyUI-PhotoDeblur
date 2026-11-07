@@ -1,0 +1,3 @@
+# Optional: needed only when the separate Model Downloader actually downloads.
+# No environment installation is performed by the nodes themselves.
+gdown>=6.5.1,<7

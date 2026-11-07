@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.cupy_cache/
+weights/
+models/
+*.pth
+*.pt
+*.safetensors
+.env

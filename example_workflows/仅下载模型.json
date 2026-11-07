@@ -1,0 +1,81 @@
+{
+  "last_node_id": 2,
+  "last_link_id": 0,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "PhotoDeblurDownloader",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        360,
+        180
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "ready",
+          "type": "PHOTO_DEBLUR_READY",
+          "links": []
+        },
+        {
+          "name": "model_dir",
+          "type": "STRING",
+          "links": []
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "links": []
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PhotoDeblurDownloader"
+      },
+      "widgets_values": [
+        "HI-Diff",
+        "RealBlur_J",
+        false
+      ]
+    },
+    {
+      "id": 2,
+      "type": "Note",
+      "pos": [
+        480,
+        40
+      ],
+      "size": [
+        520,
+        270
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {},
+      "widgets_values": [
+        "选择模型和版本，点击运行队列即可下载。\n默认不替换校验不符的已有文件。\nrepair_invalid开启：先备份不匹配的文件再修复。\n完整官方权重会跳过下载，不需要额外网络或gdown。\n缺文件时需要 ComfyUI 的 Python 安装 requirements-download.txt。\n下载目录固定为 ComfyUI 的 models。\n可把 ready 连到对应加载器的 download_ready，保证先下载再加载。"
+      ]
+    }
+  ],
+  "links": [],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [
+        0,
+        0
+      ]
+    }
+  },
+  "version": 0.4
+}
