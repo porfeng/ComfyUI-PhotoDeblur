@@ -1,7 +1,13 @@
 [project]
 name = "comfyui-photodeblur"
 version = "0.1.4"
-description = "Photo deblurring with HI-Diff and MISCFilter, tiled processing, TTA and model downloading."
+description = """
+Native photo deblurring nodes for ComfyUI, integrating HI-Diff and MISCFilter to reduce camera-shake and motion blur. Suitable for trying on handheld night photos, architecture and street scenes, signs and text, and portraits with mild to moderate camera shake.
+Supports original-resolution tiled processing, configurable overlap and blending, optional 8-way TTA, and official model downloads with SHA256 verification. Both models offer RealBlur-J, RealBlur-R and GoPro checkpoints, with Chinese and English instructions and example workflows.
+
+ComfyUI 原生照片去模糊节点，集成 HI-Diff 与 MISCFilter，用于改善手抖和运动造成的模糊。适合尝试夜景手持、建筑街景、招牌文字及轻中度抖动的人像照片。
+支持原始分辨率分块处理、自定义重叠与融合、可选八路 TTA，以及官方权重下载和 SHA256 校验。两个模型均提供 RealBlur-J、RealBlur-R、GoPro 权重，附带中英文说明与示例工作流。
+"""
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.10"
