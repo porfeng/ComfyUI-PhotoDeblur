@@ -1,6 +1,6 @@
 [project]
 name = "comfyui-photodeblur"
-version = "0.1.3"
+version = "0.1.4"
 description = "Photo deblurring with HI-Diff and MISCFilter, tiled processing, TTA and model downloading."
 readme = "README.md"
 license = { file = "LICENSE" }
