@@ -117,6 +117,26 @@ models/
     └── GoPro.pth
 ```
 
+### Manual download and installation
+
+To install weights without the download node, use these official downloads:
+
+| Model | Variant | Download |
+| --- | --- | --- |
+| HI-Diff | RealBlur-J | [HI_Diff_RealBlur_J.zip](https://drive.google.com/file/d/1zdAOurzjAONRmLuPmSi0nppyqT2ORIRg/view) |
+| HI-Diff | RealBlur-R | [HI_Diff_RealBlur_R.zip](https://drive.google.com/file/d/1inQwZ6SJIHYyZoQo702Mv4upjvgg3kFA/view) |
+| HI-Diff | GoPro | [HI_Diff_GoPro.zip](https://drive.google.com/file/d/1cx0vCV5Z5fklnbqonZQad37vt4armEbT/view) |
+| MISCFilter | J / R / GoPro | [checkpoints.zip (all three variants)](https://drive.google.com/file/d/1XsySc2rDCzoqZ0-Ph1dFYQ49_APb5Eay/view) |
+
+1. Download and extract the archive you need.
+2. **HI-Diff:** locate the matching `net_g.pth`, `net_le_dm.pth` and `net_d.pth`, and place all three in the corresponding variant directory shown above. For example: `ComfyUI/models/HI-Diff/HI_Diff_RealBlur_J/net_g.pth`. Keep the three variants in separate directories.
+3. **MISCFilter:** locate `RealBlur_J.pth`, `RealBlur_R.pth` and `GoPro.pth`, and copy the variants you need into `ComfyUI/models/MISCFilter/`, keeping the filenames unchanged.
+4. Select the installed variant in the matching model loader and connect it to the tiled deblurring node. Disconnect or remove the download node when loading manually installed weights.
+
+Here, `ComfyUI/models` means the model directory configured for your installation; Desktop may use your chosen data directory. The final `.pth` paths should match the tree above, without an extra archive directory level.
+
+Manual downloading does not require gdown. MISCFilter still requires the CuPy setup described under Installation. Sources: [official HI-Diff repository](https://github.com/zhengchen1999/HI-Diff#models), [official MISCFilter repository](https://github.com/ChengxuLiu/MISCFilter#models).
+
 ## Precision and color
 
 Inference and blending use FP32 RGB/RGBA tensors at the original image size. Use display-referred sRGB images; develop RAW files before loading. The nodes output values in 0–1.
