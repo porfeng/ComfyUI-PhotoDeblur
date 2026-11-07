@@ -4,6 +4,29 @@
 
 Native **HI-Diff** and **MISCFilter** photo deblurring nodes for ComfyUI. Supports original-resolution tiled processing, overlap blending, optional TTA, and official model downloads.
 
+## Which photos should I try?
+
+Use these nodes to reduce camera-shake and motion blur before further color grading or cropping.
+
+| Scene | What to inspect |
+| --- | --- |
+| Handheld night and indoor photos | Trails around signs, window frames and furniture |
+| Architecture, storefronts and street scenes | Lines, text outlines and repeated textures |
+| Portraits and event photos | Mild to moderate shake around facial features, hair and clothing |
+| Animals and moving subjects | Motion trails on the subject, alongside areas that were already sharp |
+| High-resolution photos | Keep the original dimensions through tiling, then crop or downsize afterward |
+
+**Our experience:** the bookstore night photo showed noticeable improvements in the sign and some structural edges. Results on night portraits varied. A small, heavily blurred stage face and a cat's face showed limited improvement in some tests. These are subjective observations from a small photo set, offered as a starting point.
+
+## Practical tips
+
+- Start with **RealBlur_J, tile 768, overlap 96 and TTA off**, comparing both models on the same original image.
+- MISCFilter has no sampling steps; leave HI-Diff steps at `0` initially. Choose between them by local detail and the overall appearance.
+- Inspect text, faces and high-contrast edges at matching zoom levels. Save TTA and larger-tile results separately for comparison.
+- Defocus, detail lost in clipped highlights and very small faces are usually harder to restore than ordinary camera shake. With noisy inputs, also check whether shadow texture is smoothed away or amplified.
+- Background blur in panning or shallow-depth-of-field photos may be intentional. To restore only the subject, blend the result with the original using a mask in your photo editor.
+- Develop RAW files first and use sRGB TIFF/PNG inputs. Save a 16-bit PNG if you plan to continue color grading.
+
 ## Installation
 
 Clone this repository into `ComfyUI/custom_nodes`:
