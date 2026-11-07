@@ -4,6 +4,34 @@
 
 ComfyUI 原生 **HI-Diff** 和 **MISCFilter** 照片去模糊节点，支持原尺寸分块处理、重叠融合、可选 TTA 和官方模型下载。
 
+## 效果对比
+
+以下为实际照片的同位置、同倍率局部对比，左侧原图，右侧修复结果。点击图片可查看大图，每组下方标有处理参数。
+
+### HI-Diff
+
+**街头广告牌：**文字与建筑边缘更清楚。
+
+![HI-Diff 街头广告牌修复前后](docs/images/hi-street-signs.jpg)
+
+**街边店面：**减轻招牌与轮廓的手抖模糊。
+
+![HI-Diff 街边店面修复前后](docs/images/hi-storefront.jpg)
+
+### MISCFilter
+
+**相机展柜：**相机与镜头轮廓更清晰。
+
+![MISCFilter 相机展柜修复前后](docs/images/misc-camera-display.jpg)
+
+**彩色晶圆：**减轻格线与圆形边缘的重影。
+
+![MISCFilter 彩色晶圆修复前后](docs/images/misc-wafer.jpg)
+
+**城市夜景：**减轻建筑灯光的拖影。这组开启了 TTA 和色调修正（sigma 16）。
+
+![MISCFilter 城市夜景修复前后](docs/images/misc-night-city.jpg)
+
 ## 适合哪些照片？
 
 主要用于改善照片中的手抖和运动模糊，适合在后期调色、裁剪前尝试。

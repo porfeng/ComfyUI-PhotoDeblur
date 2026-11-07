@@ -4,6 +4,34 @@
 
 Native **HI-Diff** and **MISCFilter** photo deblurring nodes for ComfyUI. Supports original-resolution tiled processing, overlap blending, optional TTA, and official model downloads.
 
+## Before / after
+
+Real photo examples, cropped from the same area at the same scale. Left: original. Right: restored. Click an image to view the full-size comparison; settings are shown beneath each pair.
+
+### HI-Diff
+
+**Street signs:** clearer lettering and architectural edges.
+
+![HI-Diff: street signs before and after](docs/images/hi-street-signs.jpg)
+
+**Storefront:** reduced camera shake around signs and outlines.
+
+![HI-Diff: storefront before and after](docs/images/hi-storefront.jpg)
+
+### MISCFilter
+
+**Camera display:** clearer camera and lens outlines.
+
+![MISCFilter: camera display before and after](docs/images/misc-camera-display.jpg)
+
+**Colorful wafer:** reduced ghosting along grid lines and circular edges.
+
+![MISCFilter: colorful wafer before and after](docs/images/misc-wafer.jpg)
+
+**City at night:** reduced light trails on buildings. This example uses TTA and tone matching (sigma 16).
+
+![MISCFilter: city at night before and after](docs/images/misc-night-city.jpg)
+
 ## Which photos should I try?
 
 Use these nodes to reduce camera-shake and motion blur before further color grading or cropping.
