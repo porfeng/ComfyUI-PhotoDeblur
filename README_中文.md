@@ -117,6 +117,26 @@ models/
     └── GoPro.pth
 ```
 
+### 手动下载与安装
+
+不使用下载节点时，可直接下载以下官方权重：
+
+| 模型 | 版本 | 下载 |
+| --- | --- | --- |
+| HI-Diff | RealBlur-J | [HI_Diff_RealBlur_J.zip](https://drive.google.com/file/d/1zdAOurzjAONRmLuPmSi0nppyqT2ORIRg/view) |
+| HI-Diff | RealBlur-R | [HI_Diff_RealBlur_R.zip](https://drive.google.com/file/d/1inQwZ6SJIHYyZoQo702Mv4upjvgg3kFA/view) |
+| HI-Diff | GoPro | [HI_Diff_GoPro.zip](https://drive.google.com/file/d/1cx0vCV5Z5fklnbqonZQad37vt4armEbT/view) |
+| MISCFilter | J / R / GoPro | [checkpoints.zip（三个版本在同一个压缩包）](https://drive.google.com/file/d/1XsySc2rDCzoqZ0-Ph1dFYQ49_APb5Eay/view) |
+
+1. 下载所需压缩包并解压。
+2. **HI-Diff**：找到同一版本的 `net_g.pth`、`net_le_dm.pth`、`net_d.pth`，把三个文件一起放进上面的对应版本目录。例如 J 的完整路径为 `ComfyUI/models/HI-Diff/HI_Diff_RealBlur_J/net_g.pth`。三个版本分别存放。
+3. **MISCFilter**：找到 `RealBlur_J.pth`、`RealBlur_R.pth`、`GoPro.pth`，把需要的版本放进 `ComfyUI/models/MISCFilter/`，保持文件名不变。
+4. 在对应模型加载器中选择已安装的版本，直接连接分块节点运行。手动安装后可以断开或移除下载节点。
+
+上面的 `ComfyUI/models` 指这套 ComfyUI 实际配置的模型目录；Desktop 版可能放在你选定的数据目录中。最终应按目录树找到 `.pth` 文件，避免多套一层解压目录。
+
+手动下载不需要安装 gdown；MISCFilter 运行所需的 CuPy 仍按安装章节准备。下载来源：[HI-Diff 官方仓库](https://github.com/zhengchen1999/HI-Diff#models)、[MISCFilter 官方仓库](https://github.com/ChengxuLiu/MISCFilter#models)。
+
 ## 精度与颜色
 
 模型推理和融合使用 FP32，接收 RGB/RGBA 图像，保持原始尺寸。输入使用普通显示用 sRGB 图像；RAW 先在照片软件中显影。节点输出范围为 0～1。
